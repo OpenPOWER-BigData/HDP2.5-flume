@@ -1,0 +1,94 @@
+New Features:
+-----------------------
+FLUME-1734 - Hive Sink based on the new Hive Streaming support
+FLUME-2761 - Move Hive sink out of preview mode
+FLUME-1334 - Flume startup script for Windows
+FLUME-2442 - Need an alternative to providing clear text passwords in flume config
+FLUME-2729 - Allow pollableSource backoff times to be configurable
+FLUME-2947 - Upgrade Hive and thrift dependencies
+
+Kafka Sink (Experimental):
+FLUME-2251 - Add support for Kafka Sink
+FLUME-2455 - Documentation update for Kafka Sink
+FLUME-2454 - Support batchSize to allow multiple events per transaction to the Kafka Sink
+FLUME-2470 - Kafka Sink and Source must use camel case for all configs.
+FLUME-2499 - Include Kafka Message Key in Event Header, Updated Comments
+
+Kafka Source (Experimental):
+FLUME-2250 - Add support for Kafka Source
+
+Kafka Channel (Experimental):
+FLUME-2500 - Add a channel that uses Kafka
+FLUME-2523 - Document Kafka channel
+FLUME-2560 - Add Kafka Channel to dist tarballs.
+FLUME-2562 - Add metrics for Kafka Source, Kafka Sink and Kafka Channel.
+FLUME-2734 - Kafka Channel timeout property is overridden by default value
+FLUME-2781 - Kafka Channel with parseAsFlumeEvent=true should write data as is, not as flume events.
+FLUME-2823 - Flume-Kafka-Channel with new APIs
+FLUME-2901 - Document Kerberos setup for Kafka channel
+
+TailDir source
+FLUME-2498 - Implement Taildir Source
+FLUME-2801 - Performance improvement on TailDir source
+
+Unsupported Features:
+-----------------------
+FLUME-2224 - Disable File channel dual checkpointing on Windows
+FLUME-2467 - Disable Morphline Sink and Kite Dataset sinks on Windows Builds
+
+Improvements:
+-----------------------
+FLUME-2226 - Refactor BlobHandler out of morphline sink and into HTTP source
+FLUME-2227 - Move BlobDeserializer from Morphline Sink to flume-ng-core
+FLUME-2337 - export JAVA_HOME in flume-env.sh.template and increase heap size
+FLUME-2450 - Improve replay index insertion speed
+FLUME-2511 - Allow configuration of enabled protocols in Avro source and Rpc client
+FLUME-2595 - Add option to checkpoint on file channel shutdown
+FLUME-2624 - Streaming ingest performance improvement
+FLUME-2662 - Upgrade to Commons-IO 2.4
+FLUME-2663 - Address Build warnings of duplicate dependencies listed
+FLUME-2586 - HDFS Sink should have an option to try rename even if close fails
+FLUME-2655 - Update documentation for hdfs.closeTries based on FLUME-2586
+FLUME-2095 - JMS source with TIBCO (patch-1)
+FLUME-2804 - Hive sink should try to clean up transactions when flume exits
+
+Bug Fixes:
+----------------------
+FLUME-2451 - HDFS Sink Cannot Reconnect After NameNode Restart
+FLUME-2068 - File Channel issue - recovering from BadCheckpoint exception on Windows
+FLUME-2224 - Disable File channel dual checkpointing on Windows
+FLUME-2407 - Spillable Channel sometimes fails on reconfigure
+FLUME-2145 - TestCheckpointRebuilder.testFastReplay fails on Windows
+FLUME-2218 - TestFileChannelIntegrityTool tests failing on Windows
+FLUME-2219 - Windows: Flume tests need to know location of Hadoop native libraries (hadoop.dll)
+FLUME-2137 - Fix StagedInstall.java to invoke the correct startup script on Windows
+FLUME-2058 - TestFlumeEventQueue in FileChannel  fails on Windows
+FLUME-2136 - Fix intermittent test failure in TestMonitoredCounterGroup on Windows
+FLUME-2150 - Fix TestFileChannelEncryption failure on Windows
+FLUME-2358 - File Channel needs to close BackingStore & EventQueue before deleting files in checkpoint directory
+FLUME-2359 - TestFileChannelIntegrityTool throws exception on class teardown on Windows
+FLUME-2402 - Warning seen when overflow is disabled for Spillable Channel
+FLUME-2412 - Improve Logging in Spillable Channel
+FLUME-2122 - Minor cleanups of User guide
+FLUME-2175 - Update Developer Guide with notes on how to upgrade Protocol Buffer version
+FLUME-2123 - Morphline Solr sink missing short type name
+FLUME-2162 - TestHDFSEventSinkOnMiniCluster.maxUnderReplicationTest fails on hadoop2
+FLUME-2146 - Windows: Tmp file creation in TestBodyTextEventSerializer.java needs fixing
+FLUME-2151 - Windows: Update TestExecSource to use native commands on Windows
+FLUME-2501 - Updating HttpClient lib version to ensure compat with Solr
+FLUME-2508 - LineDeserializer causes incorrect behavior in SpoolDir Source on Windows
+FLUME-2530 - Resource leaks found by Coverity tool
+FLUME-2532 - Windows : TestReliableSpoolingFileEventReader - need to close filereader
+FLUME-2534 - Windows : Windows : TestFlumeEventQueue has many failures
+FLUME-2541 - Bug in TestBucketWriter.testSequenceFileCloseRetries
+FLUME-2441 - Unit test TestHTTPSource.java failed with IBM JDK 1.7
+FLUME-2520 - HTTP Source should be able to block a prefixed set of protocols.
+FLUME-2533 - HTTPS tests fail on Java 6
+FULME-2544 - Windows: Incorrect Path Separator used in HDFS path (HDFS Sink)
+FLUME-2722 - Windows : TestKafkaSourceUtil Unit Tests fail on Windows
+FLUME-2754 - Hive Sink skipping first transaction in each Batch of Hive Transactions
+FLUME-2841 - Upgrade commons-collections to 3.2.2
+FLUME-2854 - parameterizing jetty version.
+FLUME-2865 - Upgrade thrift version (0.9.2)
+
+Stopping Windows Service leaves the Flume java process running
